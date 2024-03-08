@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Predicitor Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- fonts -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='font/fonts.css')}}">
+        <!-- normalize css -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/normalize.css')}}">
+        <!-- custom css -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/utility.css')}}">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/style.css')}}">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/responsive.css')}}">
+    </head>
+    <body>
+        <!-- navbar  -->
+        <nav class = "navbar">
+            <div class = "container flex">
+                <a href = "{{url_for('index')}}" class = "site-brand">
+                    House<span>Predictor</span>
+                </a>
+
+                <button type = "button" id = "navbar-show-btn" class = "flex">
+                    <i class = "fas fa-bars"></i>
+                </button>
+                <div id = "navbar-collapse">
+                    <button type = "button" id = "navbar-close-btn" class = "flex">
+                        <i class = "fas fa-times"></i>
+                    </button>
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a href = "{{url_for('index')}}" class = "nav-link">Home</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('gallery')}}" class = "nav-link">Gallery</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('blog')}}" class = "nav-link">Blog</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('about')}}" class = "nav-link">About</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('contact')}}" class = "nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end of navbar  -->
+
+        <!-- header -->
+        <header class = "flex header-sm">
+            <div class = "container">
+                <div class = "header-title">
+                    <h1>Predict Your True Directions</h1>
+                    <p>Go And Make New steps Towards life</p>
+                </div>
+              
+            </div>
+        </header>
+        <!-- header -->
+
+        <!-- featured section -->
+        <section id = "featured" class = "py-4">
+            <div class = "container">
+                <div class = "title-wrap">
+                    <span class = "sm-title">There Are 5 States</span>
+                    <h2 class = "lg-title">Choose Any one Place From All</h2>
+                </div>
+
+              <a href="{{url_for('B_predictor')}}">  <div class = "featured-row">
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/banglore.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                Banglore
+                            </span>
+                            <div>
+                                <p class = "text">It is the first city in Asia to be lit by street lamp. At 7 pm on August 5, 1905.The climate is one of the best aspects of Bangalore.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{url_for('D_predictor')}}">   <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/Delhi.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                Delhi (Capital of India)
+                            </span>
+                            <div>
+                                <p class = "text">New Delhi is the capital of India , and a part of the National Capital Territory of Delhi.It is the home to the largest market of spices in Asia</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{url_for('M_predictor')}}">
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/mumbai.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                Mumbai (Bombay: city of dreams)
+                            </span>
+                            <div>
+                                <p class = "text">Migrants from every part of the country move, city every day in search of a better life , hence the name 'City of Dreams' was coined</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{url_for('G_predictor')}}">
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/gujarat.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                Gujarat
+                            </span>
+                            <div>
+                                <br>
+                                <p class = "text">It is renowned for its beaches, temple towns historic capitals.Wildlife sanctuaries,hill resorts and natural grandeur are gifts of Gujarat</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="{{url_for('T_predictor')}}">
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/tamilnadu.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                Tamil Nadu
+                            </span>
+                            <div>
+                                <br>
+                                <p class = "text">Tamil Nadu is famous for its temples, festivals, and celebration of the arts.The Hindu temples and monuments at Mamallapuram</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/uttarpradesh.png')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                More Coming Soon...................
+                            </span>
+                            
+                            <div>
+                                <br>
+                                <p class = "text">We Are coming with some more states in future ! subscribe us for using that </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of featured section -->
+
+        <!-- services section -->
+         <!-- js -->
+         <script src ="{{url_for('static',filename='js/script.js')}}"></script>
+         <script>
+             // play/pause video
+             let video = document.querySelector('.video-wrapper video');
+             document.getElementById('play-btn').addEventListener('click', () => {
+                 if(video.paused){
+                     video.play();
+                 } else {
+                     video.pause();
+                 }
+             });
+         </script>
+       
+    </body>
+</html>

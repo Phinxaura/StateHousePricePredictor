@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>House Price Predictor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- fonts -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='font/fonts.css')}}">
+        <!-- normalize css -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/normalize.css')}}">
+        <!-- custom css -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/utility.css')}}">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/style.css')}}">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/responsive.css')}}">
+    </head>
+    <body>
+        <!-- navbar  -->
+        <nav class = "navbar">
+            <div class = "container flex">
+                <a href = "{{url_for('index')}}" class = "site-brand">
+                    House<span>Predictor</span>
+                </a>
+
+                <button type = "button" id = "navbar-show-btn" class = "flex">
+                    <i class = "fas fa-bars"></i>
+                </button>
+                <div id = "navbar-collapse">
+                    <button type = "button" id = "navbar-close-btn" class = "flex">
+                        <i class = "fas fa-times"></i>
+                    </button>
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a href = "{{url_for('index')}}" class = "nav-link">Home</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('gallery')}}" class = "nav-link">Gallery</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{ url_for('predictor_page') }}" class = "nav-link">predict</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('blog')}}" class = "nav-link">Blog</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('about')}}" class = "nav-link">About</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('contact')}}" class = "nav-link">Contact</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end of navbar  -->
+
+        <!-- header -->
+        <header class = "flex">
+            <div class = "container">
+                <div class = "header-title">
+                    <h1>Predict Your True Directions</h1>
+                    <p>We Shape Our Homes Then Our Home Shape Us</p>
+                </div>
+                <!-- <div class = "header-form">
+                    <h2>Choose your Travel location:</h2>
+                    <form class = "flex">
+                        <input type = "text" class = "form-control" placeholder="Destination name">
+                        <input type="date" class = "form-control" placeholder="Date">
+                        <input type="number" class = "form-control" placeholder="Price ($)">
+                        <input type="submit" class = "btn" value = "Search">
+                    </form>
+                </div> -->
+            </div>
+        </header>
+        <!-- header -->
+
+        <!-- featured section -->
+        <section id = "featured" class = "py-4">
+            <div class = "container">
+                <div class = "title-wrap">
+                    <span class = "sm-title">Predict Some States House Prices By Sitting in Your Home  </span>
+                    <h2 class = "lg-title">Some States</h2>
+                </div>
+
+                <div class = "featured-row">
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/Banglore.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                            Banglore
+                            </span>
+                            <div>
+                                <p class = "text">It is the first city in Asia to be lit by street lamp. At 7 pm on August 5, 1905.The climate is one of the best aspects of Bangalore.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/Delhi.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                            Delhi
+                            </span>
+                            <div>
+                                <p class = "text">New Delhi is the capital of India , and a part of the National Capital Territory of Delhi.It is the home to the largest market of spices in Asia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/mumbai.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                            Mumbai
+                            </span>
+                            <div>
+                                <p class = "text">Migrants from every part of the country move, city every day in search of a better life , hence the name 'City of Dreams' was coined.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "featured-item my-2 shadow">
+                        <img src = "{{url_for('static',filename = 'images/gujarat.jpg')}}" alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                            Gujarat
+                            </span>
+                            <div>
+                                <p class = "text">It is renowned for its beaches, temple towns historic capitals.Wildlife sanctuaries,hill resorts and natural grandeur are gifts of Gujarat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "featured-item my-2 shadow">
+                        <img src ="{{url_for('static',filename = 'images/tamilnadu.jpg')}}"  alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                             Tamil Nadu
+                            </span>
+                            <div>
+                            <p class = "text">Tamil Nadu is famous for its temples, festivals, and celebration of the arts.The Hindu temples and monuments at Mamallapuram</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "featured-item my-2 shadow">
+                        <img src ="{{url_for('static',filename = 'images/uttarpradesh.png')}}"  alt = "featured place">
+                        <div class = "featured-item-content">
+                            <span>
+                                <i class = "fas fa-map-marker-alt"></i>
+                                Uttar Pradesh (Coming Soon)
+                            </span>
+                            <div>
+                            <p class = "text">Uttar Pradesh is India's fourth-largest state in terms of land area and is roughly of same size like United Kingdom.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of featured section -->
+
+        <!-- services section -->
+        <section id = "services" class = "py-4">
+            <div class = "container">
+                <div class = "title-wrap">
+                    <span class = "sm-title">know about services that we offer</span>
+                    <h2 class = "lg-title">Our services</h2>
+                </div>
+
+                <div class = "services-row">
+                    <div class = "services-item">
+                        <span class = "services-icon">
+                            <i class = "fas fa-map-marked-alt"></i>
+                        </span>
+                        <h3>Prediction Based on Locations</h3>
+                        <p class = "text">Various Famous Locations are present inside prediction Tool.</p>
+                        <a href = "#" class = "btn">Read more</a>
+                    </div>
+
+                    <div class = "services-item">
+                        <span class = "services-icon">
+                            <i class = "fas fa-hotel"></i>
+                        </span>
+                        <h3>Prediction Based on SQ.ft</h3>
+                        <p class = "text">Predict House Price According to Your Space Requirements</p>
+                        <a href = "#" class = "btn">Read more</a>
+                    </div>
+
+                    <div class = "services-item">
+                        <span class = "services-icon">
+                            <i class = "fas fa-bath"></i>
+                        </span>
+                        <h3>Prediction Based on Bathrooms</h3>
+                        <p class = "text">There is Also an option of Predict the price of House By giving Number of Bathrooms.</p>
+                        <a href = "#" class = "btn">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of services section -->
+
+        <!-- testimonials section -->
+        <section id = "testimonials" class = "py-4">
+            <div class = "container">
+                <div class = "title-wrap">
+                    <span class = "sm-title">Feedbacks from Our Cleints</span>
+                    <h2 class = "lg-title">Testimonials</h2>
+                </div>
+
+                <div class = "test-row">
+                    <div class = "test-item">
+                        <!-- this predictor helps me a lot ! I am from bihar live in delhi but when i get job letter from cisco , i want to move on banglore ,this helps me to get the prices of houses without wasting time on searching and long day with dealers today i am live in banglore this predictor helps me achieve my dream house in budget . -->
+                        <p class = "text">ई भविष्यवाणी हमरा के बहुत मदद करेला ! हम बिहार के हई दिल्ली में रहेनी लेकिन जब सिस्को से जॉब लेटर मिलेला , त बंगलोर पर आगे बढ़े के मन करेला ,एह से हमरा खोज में समय बर्बाद कइले बिना मकान के दाम मिले में मदद मिलेला आ डीलर के साथे लंबा दिन आज हम बंगलौर में रहत बानी ई भविष्यवाणी करे वाला बजट में हमार सपना के घर हासिल करे में मदद करेला!</p>
+                        <div class = "test-item-info">
+                            <img src = "{{url_for('static',filename = 'images/test-1.jpg')}}" alt = "testimonial">
+                            <div>
+                                <h3>Ashish Kumar</h3>
+                                <p class = "text">Prediction of Banglore Houses</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "test-item">
+                        <p class = "text">I am Monu ! Live in Delhi But my family resides in other state,i was also reside with them but when i get selected in jims delhi college then i want to shift from one state to another then this predictor helps me by providing instant prices of houses with locations near to college! today i live in delhi and pursuing mca.  </p>
+                        <div class = "test-item-info">
+                            <img src = "{{url_for('static',filename = 'images/test-2.jpg')}}" alt = "testimonial">
+                            <div>
+                                <h3>Monu Singh</h3>
+                                <p class = "text">Prediction Of Delhi Houses</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "test-item">
+                        <p class = "text">As you Know who i am ! i got stuck in the places which are very small space but cost more when i want to hide from as you know but this predictor helps me to get best house in best range today i left my don job and looking forward to work in some reputed firm .</p>
+                        <div class = "test-item-info">
+                            <img src = "{{url_for('static',filename = 'images/test-3.jpg')}}" alt = "testimonial">
+                            <div>
+                                <h3>Don</h3>
+                                <p class = "text">Prediction of Mumbai Houses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of testimonials section -->
+
+        <!-- video section -->
+        <section id = "video">
+            <div class = "video-wrapper flex">
+                <video loop>
+                    <source src = "{{url_for('static',filename = 'videos/video-section.mp4')}}" type = "video/mp4">
+                </video>
+                <button type = "button" id = "play-btn">
+                    <i class = "fas fa-play"></i>
+                </button>
+            </div>
+        </section>
+        <!-- end of video section -->
+
+        <!-- footer -->
+        <footer class = "py-4">
+            <div class = "container footer-row">
+                <div class = "footer-item">
+                    <a href = "index.html" class = "site-brand">
+                        House Price<span>Predictor</span>
+                    </a>
+                    <p class = "text">The House Price Predictor project aims to develop a predictive model that forecasts the prices of houses based on various attributes. In today's dynamic real estate market, having a reliable tool for estimating house prices can assist buyers, sellers, and real estate agents in making informed decisions.</p>
+                </div>
+
+                <div class = "footer-item">
+                    <h2>Follow us on: </h2>
+                    <ul class = "social-links">
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-google-plus"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = "footer-item">
+                    <h2>Popular Places For Buy House:</h2>
+                    <ul>
+                        <li><a href = "#">Banglore</a></li>
+                        <li><a href = "#">Mumbai</a></li>
+                        <li><a href = "#">Delhi</a></li>
+                        <li><a href = "#">Tamil Nadu</a></li>
+                        <li><a href = "#">Gujarat</a></li>
+                    </ul>
+                </div>
+
+                <div class = "subscribe-form footer-item">
+                    <h2>Subscribe for Getting Updates!</h2>
+                    <form class = "flex">
+                        <input type = "email" placeholder="Enter Email" class = "form-control">
+                        <input type = "submit" class = "btn" value = "Subscribe">
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+
+        <!-- js -->
+        <script src ="{{url_for('static',filename='js/script.js')}}"></script>
+        <script>
+            // play/pause video
+            let video = document.querySelector('.video-wrapper video');
+            document.getElementById('play-btn').addEventListener('click', () => {
+                if(video.paused){
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        </script>
+    </body>
+</html>

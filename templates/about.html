@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>House Price Predictor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- fonts -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='font/fonts.css')}}">
+        <!-- normalize css -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/normalize.css')}}">
+        <!-- custom css -->
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/utility.css')}}">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/style.css')}}">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='css/responsive.css')}}">
+       
+        
+    </head>
+    <body>
+        <!-- navbar  -->
+        <nav class = "navbar">
+            <div class = "container flex">
+                <a href = "{{url_for('index')}}" class = "site-brand">
+                    House<span>Predictor</span>
+                </a>
+
+                <button type = "button" id = "navbar-show-btn" class = "flex">
+                    <i class = "fas fa-bars"></i>
+                </button>
+                <div id = "navbar-collapse">
+                    <button type = "button" id = "navbar-close-btn" class = "flex">
+                        <i class = "fas fa-times"></i>
+                    </button>
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a href = "{{url_for('index')}}" class = "nav-link">Home</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('gallery')}}" class = "nav-link">Gallery</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{ url_for('predictor_page') }}" class = "nav-link">predict</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('blog')}}" class = "nav-link">Blog</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('about')}}" class = "nav-link">About</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "{{url_for('contact')}}" class = "nav-link">Contact</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end of navbar  -->
+
+        <!-- header -->
+        <header class = "flex header-sm">
+            <div class = "container">
+                <div class = "header-title">
+                    <h1>About</h1>
+                    <p></p>
+                </div>
+            </div>
+        </header>
+        <!-- header -->
+
+        <!-- about section -->
+        <section id = "about" class = "py-4">
+            <div class = "container">
+                <div class = "title-wrap">
+                    <span class = "sm-title">Who are We</span>
+                    <h2 class = "lg-title">Our Actual Task </h2>
+                </div>
+
+                <div class = "about-row">
+                    <div class = "about-left my-2">
+                        <img src = "{{url_for('static',filename='images/about-img.jpg')}}" alt = "about img">
+                    </div>
+                    <div class = "about-right">
+                        <h2>HOUSES PRICE PREDICTOR</h2>
+                        <p class = "text">Application where users can input house features and receive predicted prices.—House prices increase every year, so there is a need
+                            for a system to predict house prices in the future. House price
+                            prediction can help the developer determine the selling price of a
+                            house and can help the customer to arrange the right time to
+                            purchase a house.Price prediction uses an algorithm to analyze a product or service based on its characteristics, demand, and current market trends. Then the software sets a price at a level it predicts will both attract customers and maximize sales. In some circles, the practice is called price forecasting or predictive pricing.</p>
+                        <p class = "text">Here we use a machine learning algorithms to build an accurate predictive model. The model's performance will be assessed using metrics like mean squared error, R-squared, and cross-validation techniques to ensure its reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of about section -->
+
+        <!-- facts section -->
+        <section id = "facts" class = "py-4 flex">
+            <div class = "container">
+                <div class = 'title-wrap'>
+                    <span class = "sm-title">facts about our House Prector</span>
+                    <h2 class = "lg-title">fun facts About Prediction</h2>
+                </div>
+
+                <div class = "facts-row">
+                    <div class = "facts-item">
+                        <span class = "fas fa-file facts-icon"></span>
+                        <div class = "facts-info">
+                            <strong>7000 +</strong>
+                            <p class = "text">Datasets For Your's</p>
+                        </div>
+                    </div>
+
+                    <div class = "facts-item">
+                        <span class = "fas fa-map-marker-alt  facts-icon"></span>
+                        <div class = "facts-info">
+                            <strong>50+</strong>
+                            <p class = "text">Locations</p>
+                        </div>
+                    </div>
+
+                    <div class = "facts-item">
+                        <span class = "fas fa-building facts-icon"></span>
+                        <div class = "facts-info">
+                            <strong>Based On</strong>
+                            <p class = "text">prediction based on bhk and sq ft both</p>
+                        </div>
+                    </div>
+
+                    <div class = "facts-item">
+                        <span class = "	fas fa-exclamation-circle facts-icon"></span>
+                        <div class = "facts-info">
+                            <strong>Negative Value</strong>
+                            <p class = "text">if Data is inappropriate (unpredictable) or it means very less in price</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of facts section -->
+        
+
+        <!-- footer -->
+        <footer class = "py-4">
+            <div class = "container footer-row">
+                <div class = "footer-item">
+                    <a href = "index.html" class = "site-brand">
+                        House Price <span>Predictor</span>
+                    </a>
+                    <p class = "text">The House Price Predictor project aims to develop a predictive model that forecasts the prices of houses based on various attributes. In today's dynamic real estate market, having a reliable tool for estimating house prices can assist buyers, sellers, and real estate agents in making informed decisions.</p>
+                </div>
+
+                <div class = "footer-item">
+                    <h2>Follow us on: </h2>
+                    <ul class = "social-links">
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-google-plus"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = "footer-item">
+                    <h2>Popular Places for Buy Houses:</h2>
+                    <ul>
+                        <li><a href = "#">Banglore</a></li>
+                        <li><a href = "#">Delhi</a></li>
+                        <li><a href = "#">Mumbai</a></li>
+                        <li><a href = "#">Gujarat</a></li>
+                        <li><a href = "#">Tamil Nadu</a></li>
+                    </ul>
+                </div>
+
+                <div class = "subscribe-form footer-item">
+                    <h2>Subscribe for Getting Updates!</h2>
+                    <form class = "flex">
+                        <input type = "email" placeholder="Enter Email" class = "form-control">
+                        <input type = "submit" class = "btn" value = "Subscribe">
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+
+        <!-- js -->
+        <script src = "{{url_for('static',filename='js/script.js')}}"></script>
+        <script>
+            
+        </script>
+    </body>
+</html>
