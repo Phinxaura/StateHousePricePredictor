@@ -1,5 +1,5 @@
 # STATE HOUSE PRICE PREDICTOR 
-# Home page
+# Home page  
 ![Screenshot (6930)](https://github.com/Phinxaura/StateHousePricePredictor/assets/109135389/5f66d318-fbf5-43c8-a4be-3aa147d4e5e4)
 
 
